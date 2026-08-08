@@ -1,0 +1,54 @@
+# ScriptHub Caddyfile
+# Reverse proxy: scripthub.techmentor.uz -> 127.0.0.1:8000
+# Caddy auto-provisions HTTPS via Let's Encrypt (requires port 80 open for HTTP-01 challenge).
+# Port 443 = standard HTTPS, no custom port needed.
+
+{
+	# Global options
+	email admin@techmentor.uz
+}
+
+# ── Backend API + Bot webhook + Static files ───────────────────────
+https://scripthub.techmentor.uz {
+	encode gzip zstd
+
+	# CORS preflight
+	@cors method OPTIONS
+	handle @cors {
+		header {
+			Access-Control-Allow-Origin "*"
+			Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+			Access-Control-Allow-Headers "Content-Type, Authorization, X-Client-Info, Apikey"
+			Access-Control-Max-Age "86400"
+		}
+		respond 204
+	}
+
+	# Serve uploaded files directly (storage)
+	@static path /static/*
+	handle @static {
+		root * /opt/scripthub/backend/storage
+		uri strip_prefix /static
+		file_server
+	}
+
+	# Proxy everything else to FastAPI
+	reverse_proxy 127.0.0.1:8000 {
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+
+	# Security headers
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+}
+
+# ── Redirect HTTP -> HTTPS (for cert validation) ───────────────────
+http://scripthub.techmentor.uz {
+	redir https://scripthub.techmentor.uz{uri} 308
+}

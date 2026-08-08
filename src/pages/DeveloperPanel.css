@@ -1,0 +1,454 @@
+.developer {
+  padding: var(--sp-5) var(--sp-4) var(--sp-6);
+}
+
+.dev-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-4);
+}
+
+.dev-header-actions {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+/* ── Stats ────────────────────────────────────────────────────────── */
+.dev-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+
+.dev-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--sp-3) var(--sp-1);
+  border-radius: var(--radius-md);
+}
+
+.dev-stat-value {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  word-break: break-word;
+}
+
+.dev-stat-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* ── Form ─────────────────────────────────────────────────────────── */
+.dev-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-4);
+  margin-bottom: var(--sp-4);
+  border-radius: var(--radius-md);
+}
+
+.dev-form h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: var(--sp-2);
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: var(--sp-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-label:first-of-type {
+  margin-top: 0;
+}
+
+.dev-form .btn {
+  margin-top: var(--sp-3);
+}
+
+/* ── Upload areas ─────────────────────────────────────────────────── */
+.upload-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+  background: var(--bg-input);
+  border: 2px dashed var(--border-glass);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+  min-height: 100px;
+}
+
+.upload-area:hover {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.upload-area-file {
+  min-height: 120px;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.upload-placeholder span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.upload-hint {
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  color: var(--text-muted);
+}
+
+.upload-preview {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+}
+
+.upload-thumb-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.file-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.upload-filename {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Project list ─────────────────────────────────────────────────── */
+.dev-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.dev-project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+}
+
+.dev-project-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dev-project-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.dev-project-meta {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.dev-project-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.dev-project-sales {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.dev-project-format {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-soft);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.badge-featured {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-radius: var(--radius-xs);
+}
+
+/* ── Empty ────────────────────────────────────────────────────────── */
+.empty-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  margin: 0 auto var(--sp-4);
+}
+
+.empty-state p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.empty-subtitle {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: var(--sp-2);
+  font-weight: 400;
+}
+
+/* ── Chart ────────────────────────────────────────────────────────── */
+.dev-chart {
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--sp-4);
+}
+
+.dev-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: var(--sp-3);
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sp-2);
+  height: 120px;
+}
+
+.chart-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar {
+  width: 100%;
+  max-width: 32px;
+  background: linear-gradient(to top, var(--primary), var(--accent));
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  transition: height 0.3s ease;
+}
+
+.chart-bar-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.chart-bar-value {
+  font-size: 10px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ── Top projects ─────────────────────────────────────────────────── */
+.dev-top-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.dev-top-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.dev-top-item:last-child {
+  border-bottom: none;
+}
+
+.dev-top-rank {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-muted);
+  min-width: 24px;
+}
+
+.dev-top-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-top-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dev-top-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.dev-top-revenue {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--success);
+}
+
+/* ── Recent orders ────────────────────────────────────────────────── */
+.dev-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.dev-order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.dev-order-item:last-child {
+  border-bottom: none;
+}
+
+.dev-order-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-order-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dev-order-date {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.dev-order-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.dev-order-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+}
+
+.status-completed { background: rgba(16,185,129,0.15); color: var(--success); }
+.status-pending { background: rgba(245,158,11,0.15); color: var(--warning); }
+.status-paid { background: rgba(59,130,246,0.15); color: var(--info); }
+.status-failed { background: rgba(239,68,68,0.15); color: var(--error); }
+
+.dev-order-amount {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ── Sections ──────────────────────────────────────────────────────── */
+.dev-section {
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--sp-4);
+}
+
+.dev-project-revenue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.dev-project-revenue-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.dev-project-revenue-label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.dev-project-views {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.dev-project-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+}

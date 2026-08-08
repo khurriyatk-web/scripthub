@@ -1,0 +1,35 @@
+.favorites {
+  padding: var(--sp-5) var(--sp-4) var(--sp-6);
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.empty-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  margin: 0 auto var(--sp-4);
+}
+
+.empty-state p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.empty-subtitle {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: var(--sp-2);
+  font-weight: 400;
+}
